@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<!-- OGP for Meta (Facebook/Instagram) -->
+<meta property="og:title" content="採用情報 | Farleap Inc. — Unlearn to leap.">
+<meta property="og:description" content="常識を置き去りにする飛躍を、一緒に。AI SaaS × 統合プラットフォーム × R&Dで企業の非連続な成長を実現するチームへ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://farleap.co.jp/career">
+<meta property="og:image" content="https://farleap.co.jp/og-career.png">
+<meta property="og:site_name" content="Farleap Inc.">
+<meta property="og:locale" content="ja_JP">
+<meta property="fb:app_id" content="">
+<!-- Twitter / TikTok -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="採用情報 | Farleap Inc.">
+<meta name="twitter:description" content="常識を置き去りにする飛躍を、一緒に。挑戦する仲間を募集しています。">
+<meta name="twitter:image" content="https://farleap.co.jp/og-career.png">
+<title>採用情報 | Farleap Inc. — Unlearn to leap.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== IN-APP BROWSER & WEBVIEW FIXES ===== */
+html {
+  /* Fix iOS 100vh issue in Instagram/TikTok/Facebook in-app browsers */
+  height: -webkit-fill-available;
+  /* Prevent text size adjust in WebViews */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  /* Safe area insets for notched devices (iPhone X+) */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  /* Smooth scrolling in WebViews */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent pull-to-refresh in some in-app browsers */
+  overscroll-behavior-y: none;
+}
+
+/* Prevent tap highlight in WebViews */
+a, button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Fix images in WebView not respecting max-width */
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Fix font rendering in in-app browsers */
+body, input, textarea, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --cyan: #00E5FF;
+  --cyan-dim: rgba(0,229,255,0.12);
+  --cyan-glow: rgba(0,229,255,0.25);
+  --black: #0A0A0A;
+  --dark: #141414;
+  --gray-900: #1A1A1A;
+  --gray-800: #2A2A2A;
+  --gray-600: #666666;
+  --gray-500: #888888;
+  --gray-400: #AAAAAA;
+  --gray-200: #D4D4D4;
+  --gray-100: #ECECEC;
+  --bg: #F0F0F0;
+  --white: #FFFFFF;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --sans: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
+  --jp: 'Noto Sans JP', sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  color: var(--black);
+  background: var(--bg);
+  line-height: 1.8;
+  overflow-x: hidden;
+  /* Safe area already set above — these override only visual props */
+}
+
+/* ===== NOISE TEXTURE ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cstyle%3Etext%7Bfont-family:monospace;font-size:11px;fill:%23ccc;opacity:0.25%7D%3C/style%3E%3Ctext x='10' y='20'%3E%23%3C/text%3E%3Ctext x='70' y='45'%3E%2B%3C/text%3E%3Ctext x='140' y='25'%3E%40%3C/text%3E%3Ctext x='200' y='55'%3E%25%3C/text%3E%3Ctext x='260' y='30'%3E%23%3C/text%3E%3Ctext x='40' y='80'%3E%2B%3C/text%3E%3Ctext x='110' y='70'%3E%23%3C/text%3E%3Ctext x='175' y='90'%3E%40%3C/text%3E%3Ctext x='240' y='75'%3E%2B%3C/text%3E%3Ctext x='25' y='130'%3E%40%3C/text%3E%3Ctext x='90' y='120'%3E%25%3C/text%3E%3Ctext x='155' y='140'%3E%23%3C/text%3E%3Ctext x='220' y='125'%3E%2B%3C/text%3E%3Ctext x='280' y='145'%3E%40%3C/text%3E%3Ctext x='50' y='175'%3E%23%3C/text%3E%3Ctext x='120' y='165'%3E%2B%3C/text%3E%3Ctext x='185' y='185'%3E%25%3C/text%3E%3Ctext x='250' y='170'%3E%23%3C/text%3E%3Ctext x='15' y='220'%3E%2B%3C/text%3E%3Ctext x='80' y='210'%3E%40%3C/text%3E%3Ctext x='145' y='230'%3E%23%3C/text%3E%3Ctext x='210' y='215'%3E%25%3C/text%3E%3Ctext x='270' y='235'%3E%2B%3C/text%3E%3Ctext x='35' y='270'%3E%25%3C/text%3E%3Ctext x='100' y='260'%3E%23%3C/text%3E%3Ctext x='165' y='280'%3E%2B%3C/text%3E%3Ctext x='230' y='265'%3E%40%3C/text%3E%3Ctext x='290' y='285'%3E%23%3C/text%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+
+/* ===== NAV ===== */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  padding-top: calc(20px + env(safe-area-inset-top));
+  padding-left: calc(40px + env(safe-area-inset-left));
+  padding-right: calc(40px + env(safe-area-inset-right));
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-100);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--black); }
+
+.nav-contact {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border: 1.5px solid var(--black);
+  padding: 8px 20px;
+  transition: all 0.2s;
+}
+
+.nav-contact:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.nav-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 16px 20px;
+    padding-top: calc(16px + env(safe-area-inset-top));
+  }
+  .nav-links { display: none; }
+  .nav-contact { display: none; }
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .nav-mobile span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+  }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  padding: 80px 40px 60px;
+  background: var(--bg);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.hero-meta-left {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-meta-left .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cyan);
+  display: inline-block;
+}
+
+.hero-meta-right {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero-headline h1 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(48px, 10vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.hero-headline .cyan-block {
+  display: inline-block;
+  background: var(--black);
+  color: var(--cyan);
+  padding: 0 12px;
+  line-height: 1.05;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.hero-desc {
+  font-family: var(--jp);
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 2;
+  max-width: 480px;
+}
+
+.hero-jp {
+  font-family: var(--jp);
+  font-weight: 900;
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--black);
+  writing-mode: horizontal-tb;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 48px 20px 40px; }
+  .hero-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .hero-jp { writing-mode: horizontal-tb; }
+}
+
+/* ===== MARQUEE ===== */
+.marquee {
+  background: var(--black);
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: scroll-left 25s linear infinite;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.marquee-track span { color: var(--white); }
+.marquee-track .sep { color: var(--cyan); margin: 0 16px; }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== SECTION LAYOUT ===== */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 40px;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 56px 20px; }
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(32px, 6vw, 56px);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+
+.section-heading .cyan {
+  color: var(--black);
+  background-image: linear-gradient(var(--cyan), var(--cyan));
+  background-position: 0 90%;
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+}
+
+.section-sub {
+  font-family: var(--jp);
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 2;
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+/* ===== SERVICE CARDS ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.svc-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  padding: 36px 32px;
+  position: relative;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--cyan);
+  transition: width 0.4s ease;
+}
+
+.svc-card:hover::before { width: 100%; }
+
+.svc-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 24px var(--cyan-dim);
+}
+
+.svc-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.svc-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--black);
+}
+
+.svc-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  background: var(--black);
+  padding: 4px 12px;
+  text-transform: uppercase;
+  border-left: 3px solid var(--cyan);
+}
+
+.svc-card h3 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.svc-card .svc-subtitle {
+  font-family: var(--jp);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  display: inline;
+  background-image: linear-gradient(var(--cyan), var(--cyan));
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+}
+
+.svc-card .svc-subtitle::before {
+  content: '— ';
+  opacity: 0.5;
+}
+
+.svc-card p {
+  font-family: var(--jp);
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 2;
+}
+
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.svc-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--black);
+  border: 1px solid var(--gray-800);
+  padding: 4px 12px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-grid .svc-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== MEMBERS ===== */
+.members-bg {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.members-bg .section-label { color: var(--gray-500); }
+.members-bg .section-heading { color: var(--white); }
+.members-bg .section-sub { color: var(--gray-400); }
+
+.coming-soon-wrap {
+  border: 1px solid var(--gray-800);
+  padding: 48px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+.cs-avatars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.cs-av {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-800);
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.cs-av:first-child { margin-left: 0; }
+
+.cs-av-1 { background: #1A2A3A; }
+.cs-av-2 { background: #1A3A2A; }
+.cs-av-3 { background: #2A1A3A; }
+.cs-av-4 { background: #3A2A1A; }
+.cs-av-5 { background: #1A3A3A; }
+
+.cs-av svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gray-500);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.coming-soon-wrap h3 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.coming-soon-wrap .cs-accent {
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  background: var(--cyan);
+  margin-bottom: 16px;
+}
+
+.coming-soon-wrap .cs-desc {
+  font-family: var(--jp);
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 2;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+@media (min-width: 900px) {
+  .member-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.m-slot {
+  border: 1px dashed var(--gray-800);
+  padding: 20px 8px;
+  text-align: center;
+}
+
+.m-slot-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px dashed var(--gray-600);
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-slot-circle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gray-600);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.m-slot-name {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gray-600);
+  letter-spacing: 1px;
+}
+
+.m-slot-role {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--gray-800);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+  background: var(--bg);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 48px);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.cta-section h2 .cyan { color: var(--cyan); }
+
+.cta-jp {
+  font-family: var(--jp);
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-bottom: 32px;
+  line-height: 2;
+}
+
+/* -- LINE CTA area -- */
+.cta-text-area {
+  margin-bottom: 32px;
+}
+
+.cta-text-area p {
+  font-family: var(--jp);
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 2.2;
+}
+
+.cta-chevron {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 24px;
+  color: var(--gray-400);
+  font-size: 20px;
+  animation: chevron-bounce 1.5s ease infinite;
+}
+
+@keyframes chevron-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.line-label-bar {
+  background: var(--dark);
+  color: var(--white);
+  font-family: var(--jp);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 14px 20px;
+  margin-bottom: 0;
+}
+
+.line-btn-wrap {
+  display: block;
+  text-decoration: none;
+  background: #06C755;
+  color: var(--white);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s;
+}
+
+.line-btn-wrap:hover {
+  background: #05B34C;
+}
+
+.line-icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.line-icon-box svg {
+  width: 30px;
+  height: 30px;
+}
+
+.line-btn-text {
+  font-family: var(--jp);
+  font-weight: 900;
+  font-size: 17px;
+  flex: 1;
+  letter-spacing: 0.5px;
+}
+
+.line-btn-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.3s;
+}
+
+.line-btn-wrap:hover .line-btn-arrow {
+  border-color: var(--white);
+}
+
+.line-btn-arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--white);
+}
+
+@media (max-width: 768px) {
+  .cta-section { padding: 56px 20px; }
+  .line-btn-text { font-size: 15px; }
+}
+
+/* Ensure minimum touch target (48px) for all interactive elements */
+.line-btn-wrap { min-height: 64px; }
+.nav-contact, .nav-mobile { min-height: 44px; min-width: 44px; }
+
+/* In-app browser specific tweaks */
+.in-app-browser .marquee-track {
+  /* Some in-app browsers stutter on animations — simplify */
+  animation-duration: 30s;
+}
+
+.in-app-browser .hero-headline h1 {
+  /* Prevent font-size clamp issues in some WebViews */
+  font-size: 48px;
+}
+
+@media (max-width: 400px) {
+  .in-app-browser .hero-headline h1 { font-size: 36px; }
+}
+
+/* Fix position:sticky not working in some in-app browsers */
+@supports not (position: sticky) {
+  .nav-bar { position: fixed; width: 100%; }
+  .hero { margin-top: 60px; }
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--black);
+  color: var(--gray-500);
+  padding: 40px;
+  padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  position: relative;
+  z-index: 1;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left .f-logo {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-left p {
+  font-family: var(--jp);
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--gray-500);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gray-500);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--cyan); }
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gray-600);
+  letter-spacing: 1px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-800);
+}
+
+@media (max-width: 768px) {
+  footer { padding: 32px 20px; }
+  .footer-inner { flex-direction: column; }
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-logo">FARLEAP</div>
+  <ul class="nav-links">
+    <li><a href="https://farleap.co.jp/services">Services</a></li>
+    <li><a href="https://farleap.co.jp/about">About</a></li>
+    <li><a href="https://farleap.co.jp/company">Company</a></li>
+    <li><a href="https://farleap.co.jp/#career">Career</a></li>
+  </ul>
+  <a href="https://farleap.co.jp/contact" class="nav-contact">Contact</a>
+  <div class="nav-mobile"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    <div class="hero-meta-left"><span class="dot"></span> EST. 2026 // TOKYO, JAPAN</div>
+    <div class="hero-meta-right">CAREER</div>
+  </div>
+  <div class="hero-headline">
+    <h1>COME<br>BUILD THE<br><span class="cyan-block">LEAP.</span></h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      常識を手放し、テクノロジーで企業の「非連続な飛躍」を一緒に創る。<br>
+      AI SaaS・統合プラットフォーム・イノベーションR&D — 3つの変革エンジンで<br>
+      挑戦する仲間を募集しています。
+    </p>
+    <div class="hero-jp">常識を置き去りにする、飛躍を。</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>UNLEARN TO LEAP.</span><span class="sep">—</span>
+    <span>LEAP, DON'T STEP.</span><span class="sep">—</span>
+    <span>BE THE ACID BLUE.</span><span class="sep">—</span>
+    <span>UNLEARN TO LEAP.</span><span class="sep">—</span>
+    <span>LEAP, DON'T STEP.</span><span class="sep">—</span>
+    <span>BE THE ACID BLUE.</span><span class="sep">—</span>
+    <span>UNLEARN TO LEAP.</span><span class="sep">—</span>
+    <span>LEAP, DON'T STEP.</span><span class="sep">—</span>
+    <span>BE THE ACID BLUE.</span><span class="sep">—</span>
+    <span>UNLEARN TO LEAP.</span><span class="sep">—</span>
+    <span>LEAP, DON'T STEP.</span><span class="sep">—</span>
+    <span>BE THE ACID BLUE.</span><span class="sep">—</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="section-label reveal">§ 01 / Our Engines</div>
+  <h2 class="section-heading reveal">OUR<br><span class="cyan">SERVICES</span></h2>
+  <p class="section-sub reveal">
+    3つの変革エンジンで企業の非連続な成長を実装する<br>テック・コングロマリット。
+  </p>
+
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-card-top">
+        <div class="svc-num">01</div>
+        <div class="svc-badge">AI SaaS</div>
+      </div>
+      <h3>Farleap Sirius</h3>
+      <div class="svc-subtitle">AIで人材の力を解き放つ</div>
+      <p>AI人材評価・配置最適化プラットフォーム。独自のアセスメント×AI解析で「曖昧な評判」を定量化し、適材適所の配置判断を支援。IT/SaaS企業の配置ミスマッチと離職を解決する。</p>
+      <div class="svc-tags">
+        <span class="svc-tag">AI SaaS</span>
+        <span class="svc-tag">Assessment</span>
+        <span class="svc-tag">Talent Optimization</span>
+      </div>
+    </div>
+
+    <div class="svc-card reveal">
+      <div class="svc-card-top">
+        <div class="svc-num">02</div>
+        <div class="svc-badge">Platform</div>
+      </div>
+      <h3>Farleap Orion</h3>
+      <div class="svc-subtitle">営業の業務基盤をアップデート</div>
+      <p>統合SaaSプラットフォーム。既存のCRMや基幹システムを活かしながらデータを集約するハブとして機能。営業管理、代理店管理（PRM）、インセンティブ・コミッション計算をひとつのワークスペースに統合。</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Platform</span>
+        <span class="svc-tag">Sales Ops</span>
+        <span class="svc-tag">Data Hub</span>
+      </div>
+    </div>
+
+    <div class="svc-card reveal">
+      <div class="svc-card-top">
+        <div class="svc-num">03</div>
+        <div class="svc-badge">Labs</div>
+      </div>
+      <h3>Innovation Labs</h3>
+      <div class="svc-subtitle">企業固有の課題にAIを実装する</div>
+      <p>AI導入コンサルティング、専用プロダクトの受託開発、実践型AI研修。生成AI・Web3・FinTech等の新領域R&Dも含め、企業固有の課題にゼロベースで最先端の知性を実装する。</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Consulting</span>
+        <span class="svc-tag">Development</span>
+        <span class="svc-tag">AI Training</span>
+        <span class="svc-tag">R&D</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="section members-bg">
+  <div class="section-label reveal">§ 02 / Members</div>
+  <h2 class="section-heading reveal">THE<br><span class="cyan">TEAM.</span></h2>
+  <p class="section-sub reveal">
+    Farleapで共に飛躍を創るメンバーたちを順次紹介していきます。
+  </p>
+
+  <div class="coming-soon-wrap reveal">
+    <div class="cs-avatars">
+      <div class="cs-av cs-av-1">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="cs-av cs-av-2">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="cs-av cs-av-3">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="cs-av cs-av-4">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="cs-av cs-av-5">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+    </div>
+
+    <h3>COMING SOON</h3>
+    <div class="cs-accent"></div>
+    <p class="cs-desc">メンバー情報は随時更新予定です。<br>新しい仲間の紹介をお楽しみに。</p>
+
+    <div class="member-grid">
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+      <div class="m-slot">
+        <div class="m-slot-circle"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="m-slot-name">— —</div>
+        <div class="m-slot-role">TBD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">READY TO<br><span class="cyan">LEAP?</span></h2>
+
+  <div class="cta-text-area reveal">
+    <p>
+      LINEで採用の最新情報をお届けします。<br>
+      質問や相談、説明会予約もこちらから！
+    </p>
+  </div>
+
+  <div class="cta-chevron reveal">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+
+  <div class="reveal" style="max-width:560px;margin:0 auto;overflow:hidden;border-radius:8px;">
+    <div class="line-label-bar">質問や説明会申し込みもLINEから！</div>
+    <a href="https://farleap.co.jp/contact" class="line-btn-wrap">
+      <div class="line-icon-box">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="#06C755"/>
+        </svg>
+      </div>
+      <div class="line-btn-text">LINEで求人を申し込む</div>
+      <div class="line-btn-arrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="f-logo">FARLEAP</div>
+      <p>株式会社ファーリープ（Farleap Inc.）<br>
+      〒151-0051 東京都渋谷区千駄ヶ谷3-55-18 REALGATE Bldg. 1F<br>
+      contact@farleap.co.jp</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://farleap.co.jp/">Corporate</a>
+      <a href="https://farleap.co.jp/services">Services</a>
+      <a href="https://farleap.co.jp/contact">Contact</a>
+      <a href="https://farleap.co.jp/privacy">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 FARLEAP INC. — ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
+
+<script>
+// IntersectionObserver with fallback for older WebViews
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+} else {
+  // Fallback: show everything immediately in old WebViews
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+// Detect in-app browser and offer external browser option
+(function() {
+  const ua = navigator.userAgent || navigator.vendor || '';
+  const isInApp =
+    /FBAN|FBAV/i.test(ua) ||          // Facebook / Instagram
+    /Instagram/i.test(ua) ||           // Instagram
+    /musical_ly|TikTok|BytedanceWebview/i.test(ua) || // TikTok
+    /Line\//i.test(ua) ||              // LINE
+    /Twitter/i.test(ua);               // X (Twitter)
+
+  if (isInApp) {
+    document.documentElement.classList.add('in-app-browser');
+  }
+})();
+</script>
+
+</body>
+</html>
