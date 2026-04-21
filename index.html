@@ -181,6 +181,98 @@ body::before {
 
 .nav-mobile { display: none; }
 
+/* ===== MOBILE MENU OVERLAY ===== */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 199;
+}
+
+.menu-overlay.open {
+  display: block;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100%;
+  background: var(--black);
+  z-index: 200;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  padding-top: calc(24px + env(safe-area-inset-top));
+  transition: right 0.3s ease;
+  display: flex;
+  gap: 0;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-close {
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.mobile-menu-close span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--gray-400);
+  position: absolute;
+}
+
+.mobile-menu-close span:first-child {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.mobile-menu a {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 0;
+  transition: color 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.mobile-menu a:hover {
+  color: var(--cyan);
+}
+
+.mobile-menu .menu-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-800);
+}
+
 @media (max-width: 768px) {
   .nav-bar {
     padding: 16px 20px;
@@ -193,6 +285,10 @@ body::before {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+    align-items: flex-end;
   }
   .nav-mobile span {
     display: block;
@@ -504,6 +600,13 @@ body::before {
 
 .members-bg .section-label { color: var(--gray-500); }
 .members-bg .section-heading { color: var(--white); }
+.members-bg .section-heading .cyan {
+  color: var(--white);
+  background-image: linear-gradient(var(--cyan), var(--cyan));
+  background-position: 0 90%;
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+}
 .members-bg .section-sub { color: var(--gray-400); }
 
 .coming-soon-wrap {
@@ -866,6 +969,230 @@ footer {
   .footer-inner { flex-direction: column; }
 }
 
+/* ===== FLOW SECTION ===== */
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  max-width: 560px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.flow-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.flow-step-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.flow-step:first-child .flow-step-dot {
+  background: var(--cyan);
+  color: var(--black);
+}
+
+.flow-step-line {
+  width: 2px;
+  flex: 1;
+  min-height: 32px;
+  background: var(--gray-200);
+  margin: 4px 0;
+}
+
+.flow-step:last-child .flow-step-line {
+  display: none;
+}
+
+.flow-step-content {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  padding: 24px;
+  flex: 1;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.flow-step-content:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px var(--cyan-dim);
+}
+
+.flow-step-content h4 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.flow-step-content .flow-jp {
+  font-family: var(--jp);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+  display: inline;
+  background-image: linear-gradient(var(--cyan), var(--cyan));
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+}
+
+.flow-step-content p {
+  font-family: var(--jp);
+  font-size: 12px;
+  color: var(--gray-600);
+  line-height: 1.9;
+  margin-top: 8px;
+}
+
+.flow-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+  .flow-step-content { padding: 20px; }
+  .flow-step-dot { width: 40px; height: 40px; font-size: 12px; }
+  .flow-step-indicator { width: 40px; }
+}
+
+/* ===== FLOATING LINE BUTTON ===== */
+.floating-line {
+  position: fixed;
+  top: 120px;
+  right: 24px;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-line.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Chat bubble body */
+.floating-line-bubble {
+  background: #06C755;
+  color: var(--white);
+  border-radius: 20px 20px 4px 20px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 24px rgba(6,199,85,0.35);
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* Chat bubble tail */
+.floating-line-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 12px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 8px solid #06C755;
+}
+
+.floating-line:hover .floating-line-bubble {
+  background: #05B34C;
+  box-shadow: 0 6px 28px rgba(6,199,85,0.5);
+  transform: translateY(-2px);
+}
+
+.floating-line:hover .floating-line-bubble::after {
+  border-top-color: #05B34C;
+}
+
+.floating-line-bubble svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.floating-line-bubble span {
+  font-family: var(--jp);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* Pulse ring animation on the bubble */
+.floating-line-bubble::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px 24px 8px 24px;
+  border: 2px solid rgba(6,199,85,0.4);
+  animation: float-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes float-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@media (max-width: 768px) {
+  .floating-line {
+    top: 100px;
+    right: 16px;
+  }
+  .floating-line-bubble {
+    padding: 12px 14px;
+    border-radius: 16px 16px 4px 16px;
+  }
+  .floating-line-bubble span {
+    font-size: 11px;
+  }
+  .floating-line-bubble svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
 /* ===== ANIMATIONS ===== */
 .reveal {
   opacity: 0;
@@ -884,14 +1211,25 @@ footer {
 <nav class="nav-bar">
   <div class="nav-logo">FARLEAP</div>
   <ul class="nav-links">
-    <li><a href="https://farleap.co.jp/services">Services</a></li>
-    <li><a href="https://farleap.co.jp/about">About</a></li>
-    <li><a href="https://farleap.co.jp/company">Company</a></li>
-    <li><a href="https://farleap.co.jp/#career">Career</a></li>
+    <li><a href="#section-services">Services</a></li>
+    <li><a href="#section-members">Members</a></li>
+    <li><a href="#section-flow">Flow</a></li>
+    <li><a href="#section-cta">Contact</a></li>
   </ul>
-  <a href="https://farleap.co.jp/contact" class="nav-contact">Contact</a>
-  <div class="nav-mobile"><span></span><span></span><span></span></div>
+  <a href="#section-cta" class="nav-contact">Contact</a>
+  <div class="nav-mobile" id="menu-toggle"><span></span><span></span><span></span></div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="menu-overlay" id="menu-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="menu-close"><span></span><span></span></button>
+  <a href="#section-services" class="mobile-menu-link">OUR SERVICES</a>
+  <div class="menu-divider"></div>
+  <a href="#section-members" class="mobile-menu-link">THE TEAM</a>
+  <div class="menu-divider"></div>
+  <a href="#section-flow" class="mobile-menu-link">SELECTION FLOW</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1053,6 +1391,53 @@ footer {
   </div>
 </section>
 
+<!-- FLOW -->
+<section class="section" id="section-flow">
+  <div class="section-label reveal">§ 03 / Selection Flow</div>
+  <h2 class="section-heading reveal">SELECTION<br><span class="cyan">FLOW.</span></h2>
+  <p class="section-sub reveal">
+    選考の流れをご紹介します。<br>まずはカジュアルにお話ししましょう。
+  </p>
+
+  <div class="flow-steps">
+    <div class="flow-step reveal">
+      <div class="flow-step-indicator">
+        <div class="flow-step-dot">01</div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <h4>Casual Talk</h4>
+        <div class="flow-jp">カジュアル面談</div>
+        <p>まずはお互いを知る場として、カジュアルにお話しします。Farleapの事業やカルチャーについてご説明し、あなたのキャリアや興味についてお聞かせください。選考要素はありません。</p>
+      </div>
+    </div>
+
+    <div class="flow-step reveal">
+      <div class="flow-step-indicator">
+        <div class="flow-step-dot">02</div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <h4>Interview</h4>
+        <div class="flow-jp">面接</div>
+        <p>これまでのご経験やスキル、Farleapで実現したいことについてお聞きします。技術的な適性やカルチャーフィットを確認させていただきます。</p>
+      </div>
+    </div>
+
+    <div class="flow-step reveal">
+      <div class="flow-step-indicator">
+        <div class="flow-step-dot">03</div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <h4>Final Interview</h4>
+        <div class="flow-jp">最終面接</div>
+        <p>代表との面接です。ビジョンの共有と、共に飛躍を創るパートナーとしての最終確認を行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" id="section-cta">
   <h2 class="reveal">READY TO<br><span class="cyan">LEAP?</span></h2>
@@ -1084,6 +1469,16 @@ footer {
   </div>
 </section>
 
+<!-- FLOATING LINE BUTTON -->
+<a href="https://farleap.co.jp/contact" class="floating-line" id="floating-line">
+  <div class="floating-line-bubble">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.508.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" fill="white"/>
+    </svg>
+    <span>LINEで求人を申し込む</span>
+  </div>
+</a>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1104,6 +1499,63 @@ footer {
 </footer>
 
 <script>
+// Mobile menu toggle
+(function() {
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var overlay = document.getElementById('menu-overlay');
+  var close = document.getElementById('menu-close');
+  var links = document.querySelectorAll('.mobile-menu-link');
+
+  function openMenu() {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', openMenu);
+    close.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    links.forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+})();
+
+// Floating LINE button — show after 300px, hide near CTA section
+(function() {
+  var floatingBtn = document.getElementById('floating-line');
+  var ctaSection = document.getElementById('section-cta');
+  if (!floatingBtn) return;
+  window.addEventListener('scroll', function() {
+    var hideAt = ctaSection ? ctaSection.offsetTop - window.innerHeight * 1.2 : Infinity;
+    if (window.scrollY > 300 && window.scrollY < hideAt) {
+      floatingBtn.classList.add('show');
+    } else {
+      floatingBtn.classList.remove('show');
+    }
+  });
+  // GA4 tracking — フローティングボタン
+  if (typeof gtag === 'function') {
+    floatingBtn.addEventListener('click', function() {
+      gtag('event', 'line_click', {
+        button_type: 'floating',
+        button_location: 'top_right_fixed',
+        event_category: 'cta',
+        event_label: 'floating_line_button'
+      });
+    });
+  }
+})();
+
 // IntersectionObserver with fallback for older WebViews
 if ('IntersectionObserver' in window) {
   const obs = new IntersectionObserver((entries) => {
@@ -1134,14 +1586,16 @@ if ('IntersectionObserver' in window) {
   }
 })();
 
-// GA4: LINE button click tracking
+// GA4: 下部CTAボタン click tracking
 (function() {
   var lineBtn = document.getElementById('line-cta');
   if (lineBtn && typeof gtag === 'function') {
     lineBtn.addEventListener('click', function() {
-      gtag('event', 'line_cta_click', {
-        event_category: 'engagement',
-        event_label: 'LINE CTA Button'
+      gtag('event', 'line_click', {
+        button_type: 'bottom_cta',
+        button_location: 'cta_section',
+        event_category: 'cta',
+        event_label: 'bottom_line_button'
       });
     });
   }
@@ -1154,6 +1608,7 @@ if ('IntersectionObserver' in window) {
   var sections = [
     { id: 'section-services', name: 'services' },
     { id: 'section-members', name: 'members' },
+    { id: 'section-flow', name: 'flow' },
     { id: 'section-cta', name: 'cta' }
   ];
   var sectionObs = new IntersectionObserver(function(entries) {
