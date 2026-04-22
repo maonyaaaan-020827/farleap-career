@@ -1604,12 +1604,30 @@ if ('IntersectionObserver' in window) {
     if (!isMobile) return; // desktop: let default href work
 
     e.preventDefault();
+
     if (isAndroid) {
       location.href = LINE_INTENT;
-    } else {
-      location.href = LINE_APP;
-      setTimeout(function() { location.href = LINE_WEB; }, 2000);
+      return;
     }
+
+    // iOS: open line:// and cancel fallback if LINE app took over (page hidden)
+    var fallbackTimer = setTimeout(function() {
+      location.href = LINE_WEB;
+    }, 2500);
+
+    var onHide = function() {
+      if (document.hidden || document.visibilityState === 'hidden') {
+        clearTimeout(fallbackTimer);
+        document.removeEventListener('visibilitychange', onHide);
+        window.removeEventListener('pagehide', onHide);
+        window.removeEventListener('blur', onHide);
+      }
+    };
+    document.addEventListener('visibilitychange', onHide);
+    window.addEventListener('pagehide', onHide);
+    window.addEventListener('blur', onHide);
+
+    location.href = LINE_APP;
   }
 
   ['floating-line', 'line-cta'].forEach(function(id) {
