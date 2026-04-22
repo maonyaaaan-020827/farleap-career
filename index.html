@@ -784,15 +784,14 @@ body::before {
 .cta-chevron {
   display: flex;
   justify-content: center;
-  margin: 16px 0 24px;
-  color: var(--gray-400);
-  font-size: 20px;
-  animation: chevron-bounce 1.5s ease infinite;
+  margin: 20px 0 28px;
+  color: var(--gray-500);
+  animation: chevron-bounce 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes chevron-bounce {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(6px); opacity: 1; }
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(10px) scale(1.1); opacity: 1; }
 }
 
 .line-label-bar {
@@ -1450,7 +1449,7 @@ footer {
   </div>
 
   <div class="cta-chevron reveal">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 
   <div class="reveal" style="max-width:560px;margin:0 auto;overflow:hidden;border-radius:8px;">
@@ -1536,12 +1535,15 @@ footer {
   var ctaSection = document.getElementById('section-cta');
   if (!floatingBtn) return;
   window.addEventListener('scroll', function() {
-    var hideAt = ctaSection ? ctaSection.offsetTop - window.innerHeight * 1.2 : Infinity;
-    if (window.scrollY > 300 && window.scrollY < hideAt) {
-      floatingBtn.classList.add('show');
-    } else {
-      floatingBtn.classList.remove('show');
+    var show = window.scrollY > 300;
+    if (show) {
+      var lineCta = document.getElementById('line-cta');
+      if (lineCta) {
+        var rect = lineCta.getBoundingClientRect();
+        if (rect.top < window.innerHeight) show = false;
+      }
     }
+    floatingBtn.classList.toggle('show', show);
   });
   // GA4 tracking — フローティングボタン
   if (typeof gtag === 'function') {
