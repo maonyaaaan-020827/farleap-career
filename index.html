@@ -1085,6 +1085,123 @@ footer {
   .flow-step-indicator { width: 40px; }
 }
 
+/* ===== MESSAGE SECTION ===== */
+.message-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 900px;
+}
+
+.message-portrait {
+  background: var(--black);
+  aspect-ratio: 3 / 4;
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.message-portrait::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+.message-portrait svg {
+  width: 52px;
+  height: 52px;
+  stroke: var(--gray-600);
+  fill: none;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.message-portrait-label {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--white);
+}
+
+.message-portrait-accent {
+  width: 32px;
+  height: 2px;
+  background: var(--cyan);
+}
+
+.message-quote {
+  font-family: var(--jp);
+  font-weight: 900;
+  font-size: clamp(20px, 2.8vw, 30px);
+  line-height: 1.5;
+  color: var(--black);
+  margin-bottom: 24px;
+  padding-left: 20px;
+  border-left: 4px solid var(--cyan);
+  letter-spacing: 0.5px;
+}
+
+.message-body p {
+  font-family: var(--jp);
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 2;
+  margin-bottom: 14px;
+}
+
+.message-body p strong {
+  color: var(--black);
+  font-weight: 700;
+  background-image: linear-gradient(var(--cyan), var(--cyan));
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+}
+
+.message-sign {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.sign-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+
+.sign-name {
+  font-family: var(--jp);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--black);
+  letter-spacing: 2px;
+}
+
+@media (min-width: 900px) {
+  .message-wrap {
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1000px;
+  }
+}
+
 /* Desktop: two-column layout — heading left, steps right */
 @media (min-width: 900px) {
   #section-flow {
@@ -1234,6 +1351,7 @@ footer {
   <div class="nav-logo">FARLEAP</div>
   <ul class="nav-links">
     <li><a href="#section-services">Services</a></li>
+    <li><a href="#section-message">Message</a></li>
     <li><a href="#section-members">Members</a></li>
     <li><a href="#section-flow">Flow</a></li>
     <li><a href="#section-cta">Contact</a></li>
@@ -1247,6 +1365,8 @@ footer {
 <div class="mobile-menu" id="mobile-menu">
   <button class="mobile-menu-close" id="menu-close"><span></span><span></span></button>
   <a href="#section-services" class="mobile-menu-link">OUR SERVICES</a>
+  <div class="menu-divider"></div>
+  <a href="#section-message" class="mobile-menu-link">MESSAGE</a>
   <div class="menu-divider"></div>
   <a href="#section-members" class="mobile-menu-link">THE TEAM</a>
   <div class="menu-divider"></div>
@@ -1347,9 +1467,32 @@ footer {
   </div>
 </section>
 
+<!-- MESSAGE -->
+<section class="section" id="section-message">
+  <div class="section-label reveal">§ 02 / Message</div>
+  <h2 class="section-heading reveal">MESSAGE<br><span class="cyan">FROM CEO.</span></h2>
+
+  <div class="message-wrap reveal">
+    <div class="message-portrait">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div class="message-portrait-label">COMING SOON</div>
+      <div class="message-portrait-accent"></div>
+    </div>
+    <div class="message-body">
+      <div class="message-quote">一歩ずつじゃなく、跳ぶ。</div>
+      <p>AIで個人の力が10倍になった今、縦割りや前例主義は足かせでしかない。Farleapは、お客様にも、自分たち自身にも「Unlearn（学びほぐし）」を問い続ける会社です。</p>
+      <p>正解を覚えるのが上手い人より、<strong>正解を疑える人</strong>を求めています。常識の余白に、一緒に飛躍を描きませんか。</p>
+      <div class="message-sign">
+        <div class="sign-label">CEO / 代表取締役</div>
+        <div class="sign-name">菊地 脩斗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MEMBERS -->
 <section class="section members-bg" id="section-members">
-  <div class="section-label reveal">§ 02 / Members</div>
+  <div class="section-label reveal">§ 03 / Members</div>
   <h2 class="section-heading reveal">THE<br><span class="cyan">TEAM.</span></h2>
   <p class="section-sub reveal">
     Farleapで共に飛躍を創るメンバーたちを順次紹介していきます。
@@ -1415,7 +1558,7 @@ footer {
 
 <!-- FLOW -->
 <section class="section" id="section-flow">
-  <div class="section-label reveal">§ 03 / Selection Flow</div>
+  <div class="section-label reveal">§ 04 / Selection Flow</div>
   <h2 class="section-heading reveal">SELECTION<br><span class="cyan">FLOW.</span></h2>
   <p class="section-sub reveal">
     選考の流れをご紹介します。<br>まずはカジュアルにお話ししましょう。
