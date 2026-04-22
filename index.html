@@ -1085,6 +1085,29 @@ footer {
   .flow-step-indicator { width: 40px; }
 }
 
+/* Desktop: two-column layout — heading left, steps right */
+@media (min-width: 900px) {
+  #section-flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #section-flow .section-label,
+  #section-flow .section-heading,
+  #section-flow .section-sub {
+    grid-column: 1;
+  }
+  #section-flow .section-sub { margin-bottom: 0; }
+  #section-flow .flow-steps {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    max-width: 100%;
+  }
+}
+
 /* ===== FLOATING LINE BUTTON ===== */
 .floating-line {
   position: fixed;
